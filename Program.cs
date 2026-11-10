@@ -141,6 +141,7 @@ Console.WriteLine(FindIndex(scores, 60));
 Console.WriteLine(FindIndex(scores, 100));*/
 
 
+using System.ComponentModel;
 using System.Globalization;
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
@@ -218,7 +219,25 @@ int index = FindIndex(scores, target);
 if (index == -1)
 {
     Console.WriteLine("Результат не найден");
-}else
+}
+else
 {
     Console.WriteLine($"Первый индекс: {index}");
 }
+
+Console.WriteLine("Самостоятельное задание");
+Console.WriteLine("Вариант 3");
+int FindLastIndex(int[] numbers, int target)
+{
+    for (int i = numbers.Length - 1; i >= 0; i--)
+    {
+        if (numbers[i] == target)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+int[] indexLast = new int[] { 5, 8, 6, 10, 5 };
+Console.WriteLine(FindLastIndex(indexLast, 5));
+Console.WriteLine(FindLastIndex(indexLast, 7));
